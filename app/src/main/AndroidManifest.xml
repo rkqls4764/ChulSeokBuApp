@@ -13,6 +13,15 @@
         android:theme="@style/Theme.ChulSeokBuApp"
         tools:targetApi="31">
         <activity
+            android:name=".TimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RankActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DayActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalendarActivity"
             android:exported="false" />
         <activity

@@ -5,34 +5,52 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import com.example.chulseokbuapp.databinding.ActivityMainBinding;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_main);
 
-        /* 마이페이지 버튼 클릭 시 실행 구문 */
-        binding.btnMyPage.setOnClickListener(new View.OnClickListener() {
+
+        Button btn_info = findViewById(R.id.btn_info);
+        btn_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //마이페이지 화면으로 이동
                 Intent intent = new Intent(MainActivity.this, MypageActivity.class);
-                startActivity(intent); //MypageActivity로 이동
+                startActivity(intent);
             }
         });
 
-        /* 캘린더 버튼 클릭 시 실행 구문 */
-        binding.btnCalendar.setOnClickListener(new View.OnClickListener() {
+        Button btn_attend = findViewById(R.id.btn_attend);
+        btn_attend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //기록 중단 버튼으로 변경
+            }
+        });
+
+
+        Button btn_calendar = findViewById(R.id.btn_calendar);
+        btn_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //캘린더 화면으로 이동
                 Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(intent); //CalendarActivity로 이동
+                startActivity(intent);
+            }
+        });
+
+        Button btn_rank = findViewById(R.id.btn_rank);
+        btn_rank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //랭크 화면으로 이동
+                Intent intent = new Intent(MainActivity.this, RankActivity.class);
+                startActivity(intent);
             }
         });
 
